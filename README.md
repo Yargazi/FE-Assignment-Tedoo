@@ -85,5 +85,3 @@ The **Tedooo Feed Viewer** is a responsive web application designed to display a
     npm run dev
 5. Open http://localhost:3000 to view the app in your browser.
    
-
-גכדגככ'קגכ
