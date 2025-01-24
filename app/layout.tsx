@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import ReactQueryProvider from "./ReactQueryProvider";
+import { LikesProvider } from "./context/LikesContext";
 
 export const metadata = {
   title: "Tedooo Feed",
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ReactQueryProvider>
+          <LikesProvider>{children}</LikesProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

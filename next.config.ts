@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.tedooo.com",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
