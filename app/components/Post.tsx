@@ -1,27 +1,9 @@
 import InteractiveSection from "./InteractiveSection";
 import { differenceInHours, differenceInDays } from "date-fns";
-import { RefObject } from "react";
 import Image from "next/image";
+import { ItemProps, PostProps } from "../types/post";
 
-type ItemProps = {
-  id: string;
-  avatar: string;
-  username: string;
-  shopName?: string;
-  text: string;
-  images: string[];
-  comments: number;
-  date: string;
-  likes: number;
-};
-
-type postProps = {
-  posts: ItemProps[];
-  status: boolean;
-  ref: RefObject<HTMLDivElement | null>;
-};
-
-const Post = ({ posts, status, ref }: postProps) => {
+const Post = ({ posts, status, ref }: PostProps) => {
   const formatTimeAgo = (dateString: string): string => {
     const date = new Date(dateString);
     const now = new Date();
@@ -53,11 +35,11 @@ const Post = ({ posts, status, ref }: postProps) => {
                 className="h-[40px] w-[40px] object-cover object-center rounded-full mr-4"
               />
               <div>
-                <h2 className="font-bold text-lg text-[#282F2D]">
+                <h2 className="font-medium text-lg text-[#282F2D]">
                   {item.username}
                 </h2>
                 <div className="flex gap-2">
-                  <p className="text-sm text-blue-800 font-bold">
+                  <p className="text-sm text-[#0A66C2] font-medium">
                     {item.shopName || "No Shop Name"}
                   </p>
                   <p className="text-sm text-gray-500 flex items-center gap-1">
@@ -91,8 +73,8 @@ const Post = ({ posts, status, ref }: postProps) => {
                         alt="Post"
                         className={`${
                           item.images.length === 1
-                            ? "w-full object-cover object-center rounded-lg max-w-[881px] max-h-[517px]"
-                            : "w-full object-cover object-center rounded-lg max-w-[547px] max-h-[517px]"
+                            ? "w-full object-cover object-center max-w-[881px] max-h-[517px]"
+                            : "w-full object-cover object-center max-w-[547px] max-h-[517px]"
                         }`}
                       />
                     ))}
@@ -103,6 +85,7 @@ const Post = ({ posts, status, ref }: postProps) => {
             <InteractiveSection
               postId={item.id}
               likes={item.likes}
+              didLike={item.didLike}
               comments={item.comments}
             />
           </li>

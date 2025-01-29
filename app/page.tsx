@@ -39,7 +39,7 @@ export default function Home() {
   const posts = data?.pages.flatMap((page) => page.data) || [];
 
   return (
-    <div className="bg-gray-100 min-h-screen mb-5">
+    <div className="bg-gray-100 min-h-screen mb-5 font-dmSans">
       <Navbar />
       <Post posts={posts} status={isFetchingNextPage} ref={observerRef} />
     </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import HomeIcon from "@/public/icons/home.svg";
 import MessagesIcon from "@/public/icons/message-circle.svg";
 import NotificationsIcon from "@/public/icons/bell.svg";
+import Image from "next/image";
 
 export default function Navbar() {
   const [active, setActive] = useState("home");
@@ -18,10 +19,12 @@ export default function Navbar() {
     <header className="bg-white shadow-md h-[58px] w-full flex items-center px-6">
       {/* Logo */}
       <div className="flex items-center">
-        <img
+        <Image
           src="/icons/TEDOOO-LOGO.svg"
           alt="Logo"
-          className="h-10 w-10 rounded"
+          height={40}
+          width={40}
+          className="rounded"
         />
       </div>
 
@@ -29,7 +32,12 @@ export default function Navbar() {
       <div className="flex-grow mx-4">
         <div className="relative">
           <span className="absolute left-3 top-1/2 transform -translate-y-1/2">
-            <img src="/icons/search.svg" alt="Search" className="w-5 h-5" />
+            <Image
+              src="/icons/search.svg"
+              alt="Search"
+              height={20}
+              width={20}
+            />
           </span>
           <input
             type="text"
@@ -74,10 +82,12 @@ export default function Navbar() {
 
         {/* Avatar */}
         <a href="#" className="flex items-center">
-          <img
+          <Image
             src="/icons/avatar.png"
             alt="Profile"
-            className="w-8 h-8 rounded-full"
+            height={32}
+            width={32}
+            className="rounded-full"
           />
         </a>
       </nav>

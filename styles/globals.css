@@ -43,8 +43,40 @@
     color: #0A66C2;
   }
 
+  .like-icon {
+    transition: transform 0.3s ease, stroke 0.3s ease;
+    stroke: #737877;
+  }
   
-.loader {
+  .group:hover .like-icon {
+    stroke: #0A66C2;
+    transform: scale(1.1) rotate(-10deg);
+  }
+
+  .comment-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.comment-button:hover {
+  color: #3b82f6; /* hover:text-blue-500 */
+}
+
+.comment-icon {
+  stroke: currentColor;
+  stroke-width: 0.3;
+  position: relative;
+  top: 0.5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.comment-button:hover .comment-icon {
+  transform: scale(1.1) rotate(-10deg);
+  stroke: #3b82f6; /* stroke-blue-500 */
+}
+  
+  .loader {
     width: 112px;
     height: 112px;
   }
@@ -276,4 +308,5 @@
       margin-left: 0px;
     }
   }
+  
   

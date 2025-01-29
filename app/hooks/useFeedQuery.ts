@@ -16,5 +16,6 @@ export const useFeedQuery = () => {
     queryFn: fetchFeed,
     getNextPageParam: (lastPage, allPages) =>
       lastPage.hasMore ? allPages.length * 6 : undefined,
+    initialPageParam: 0,
   });
 };
